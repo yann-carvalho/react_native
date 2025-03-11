@@ -10,7 +10,7 @@ Este é um projeto básico feito com Expo para fins de aprendizado.
 
 ## Exercícios
 
-![Exercício1](https://iili.io/3qTZD0b.png)
+![Exercício1](https://iili.io/3qu3h79.png)
 
 ![Exercício2](https://iili.io/3qTmmCP.png)
 
