@@ -10,4 +10,4 @@ Este é um projeto básico feito com Expo para fins de aprendizado.
 
 ## Exercício
 
-!(https://exemplo.com/imagem.png)
+![Exercício](https://exemplo.com/imagem.png)
