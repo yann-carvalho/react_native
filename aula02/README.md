@@ -10,4 +10,4 @@ Este é um projeto básico feito com Expo para fins de aprendizado.
 
 ## Exercício
 
-![Exercício](https://ibb.co/XZbKb0xy)
+[![Exercício](https://i.postimg.cc/J7pPkyHL/Screenshot-2025-03-11-082418.png)](https://postimg.cc/pynfNLBG)
