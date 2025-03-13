@@ -13,3 +13,5 @@ Este é um projeto básico feito com Expo para fins de aprendizado.
 ![Exercício1](https://iili.io/3BXsyns.png)
 
 ![Exercício2](https://iili.io/3BX1UhJ.png)
+
+![Exercício3](https://iili.io/3BO2dEx.png)
