@@ -8,6 +8,8 @@ Este é um projeto básico feito com Expo para fins de aprendizado.
    ```bash
    git clone https://github.com/seu-usuario/react_native.git
 
-## Exercício
+## Exercícios
 
-![Exercício](https://iili.io/3qTRwHG.png)
+![Exercício1](https://iili.io/3qTRwHG.png)
+
+![Exercício2](https://iili.io/3BX1UhJ.png)
