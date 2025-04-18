@@ -1,11 +1,14 @@
 import React from 'react'
-import LoginScreen from './src/screens/LoginScreen'
+import { NavigationContainer } from '@react-navigation/native'
+import AppNavigation from './src/navigation/AppNavigation'
 
 const App = () => {
   return (
-    
-      <LoginScreen />
-    
+
+    <NavigationContainer>
+      <AppNavigation />
+    </NavigationContainer>
+
   )
 }
 

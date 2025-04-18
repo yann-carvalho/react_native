@@ -3,25 +3,25 @@ import React from 'react'
 import { useState } from 'react'
 import { AntDesign, Ionicons } from '@expo/vector-icons'
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
   return (
-    <View styles={styles.container}>
-      <Text styles={styles.title}>🔐 Login</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>🔐 Login</Text>
 
       <TextInput
-        styles={styles.input}
         placeholder="Digite seu nome"
+        style={styles.input}
         value={username}
         onChangeText={setUsername}
       />
 
       <TextInput
-        styles={styles.input}
         placeholder="Digite sua senha"
+        style={styles.input}
         secureTextEntry
         value={password}
         onChangeText={setPassword}
@@ -29,20 +29,21 @@ const LoginScreen = () => {
 
       <Button
         title="Entrar"
+        onPress={() => navigation.replace('Main')}
       />
 
-      <Text styles={styles.orText}>Ou entre com</Text>
+      <Text style={styles.orText}>Ou entre com</Text>
 
       {/* Botão do Google */}
-      <TouchableOpacity styles={styles.socialButton}>
+      <TouchableOpacity style={styles.socialButton}>
         <AntDesign name="google" size={24} color="white" />
-        <Text styles={styles.socialText}>Entrar com Google</Text>
+        <Text style={styles.socialText}>Entrar com Google</Text>
       </TouchableOpacity>
 
       {/* Botão do GitHub */}
-      <TouchableOpacity styles={[styles.socialButton, styles.githubButton]}>
+      <TouchableOpacity style={[styles.socialButton, styles.githubButton]}>
         <Ionicons name="logo-github" size={24} color="white" />
-        <Text styles={styles.socialText}>Entrar com GitHub</Text>
+        <Text style={styles.socialText}>Entrar com GitHub</Text>
       </TouchableOpacity>
 
     </View>
