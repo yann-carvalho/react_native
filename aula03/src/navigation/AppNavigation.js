@@ -1,9 +1,9 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import { IonIcons } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 import HomeScreen from '../screens/HomeScreen'
-import DetailsScreens from '../screens/DetailsScreens'
+import DetailsScreen from '../screens/DetailsScreen'
 import LoginScreen from '../screens/LoginScreen'
 import ProfileScreen from '../screens/ProfileScreen'
 
@@ -16,12 +16,12 @@ const MainTabs = () => {
       <Tab.Screen
         name="Home"
         component={HomeScreen}
-        options={{ tabBarIcon: ({ color, size }) => <IonIcons name="home-outline" size={size} color={color} /> }}
+        options={{ tabBarIcon: ({ color, size }) => <Ionicons name="home-outline" size={size} color={color} /> }}
       />
       <Tab.Screen
         name="Profile"
         component={ProfileScreen}
-        options={{ tabBarIcon: ({ color, size }) => <IonIcons name="person-outline" size={size} color={color} /> }}
+        options={{ tabBarIcon: ({ color, size }) => <Ionicons name="person-outline" size={size} color={color} /> }}
       />
     </Tab.Navigator>
   )
@@ -30,9 +30,9 @@ const MainTabs = () => {
 const AppNavigation = () => {
   return (
     <Stack.Navigator initialRouteName="Login">
-      <Stack.Screen name="Login" component={LoginScreen} screenOptions={{ headerShown: false }} />
-      <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} />
-      <Stack.Screen name="Details" component={DetailsScreens} />
+      <Stack.Screen name="Login" component={LoginScreen} screenOptions={{ headerShown: false }} ></Stack.Screen>
+      <Stack.Screen name="Main" component={MainTabs} options={{ headerShown: false }} ></Stack.Screen>
+      <Stack.Screen name="Details" component={DetailsScreen} ></Stack.Screen>
     </Stack.Navigator>
   )
 }

@@ -5,8 +5,8 @@ import { AntDesign, Ionicons } from '@expo/vector-icons'
 
 const LoginScreen = ({ navigation }) => {
 
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
 
   return (
     <View style={styles.container}>
@@ -27,10 +27,7 @@ const LoginScreen = ({ navigation }) => {
         onChangeText={setPassword}
       />
 
-      <Button
-        title="Entrar"
-        onPress={() => navigation.replace('Main')}
-      />
+      <Button title="Entrar" onPress={() => navigation.replace('Main')} />
 
       <Text style={styles.orText}>Ou entre com</Text>
 
