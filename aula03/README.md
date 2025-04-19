@@ -1,6 +1,6 @@
 # Aula 03 – React Native
 
-Este projeto é parte do curso de React Native, correspondente à Aula 03. Ele demonstra conceitos fundamentais do desenvolvimento mobile utilizando React Native, incluindo a estruturação de componentes, navegação entre telas e estilização.
+Este projeto é parte do curso de React Native, correspondente à Aula 03. Ele demonstra conceitos fundamentais do desenvolvimento mobile utilizando React Native, incluindo a estruturação de componentes, navegação entre telas e estilização. Trata-se da construção de um aplicativo mobile de cursos de tecnologia.
 
 ## 📁 Estrutura do Projeto
 
@@ -57,34 +57,16 @@ npx expo start
 
 Isso abrirá o Expo Developer Tools no seu navegador. A partir daí, você pode executar o aplicativo em um emulador ou dispositivo físico (usando o app Expo Go, por exemplo).
 
-## 🤝 Contribuindo
-
-Contribuições são sempre bem-vindas! Se quiser ajudar a melhorar este projeto:
-
-1. Faça um fork do repositório
-2. Crie uma nova branch com sua feature:
-
-```bash
-git checkout -b minha-feature
-```
-
-3. Faça o commit de suas alterações:
-
-```bash
-git commit -m 'Adiciona minha nova feature'
-```
-
-4. Faça o push para a sua branch:
-
-```bash
-git push origin minha-feature
-```
-
-5. Abra um Pull Request
 
 ## 📸 Capturas de Tela
 
-*Adicione aqui prints do app rodando para demonstrar as telas e recursos principais.*
+<p align="center">
+  <img src="https://i.postimg.cc/5NZ0Y4TH/print-1.png" alt="Tela 1" width="22%" />
+  <img src="https://i.postimg.cc/Njm01hvd/print-2.png" alt="Tela 2" width="22%" />
+  <img src="https://i.postimg.cc/X7ZqYGHS/print-3.png" alt="Tela 3" width="22%" />
+  <img src="https://i.postimg.cc/G3g9RJjx/print-4.png" alt="Tela 4" width="22%" />
+</p>
+
 
 ## 📄 Licença
 
