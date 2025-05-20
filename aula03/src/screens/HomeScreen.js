@@ -1,14 +1,29 @@
 import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useCallback, useState } from 'react'
+import { useFocusEffect } from '@react-navigation/native'
+import { getCursos } from '../services/CursoService'
 
 const HomeScreen = ({ navigation }) => {
 
-  const items = [
+  const [items, setItems] = useState([])
+
+  const carregarCursos = async () => {
+    const cursos = await getCursos()
+    setItems(cursos)
+  }
+
+  useFocusEffect(
+    useCallback(() => {
+      carregarCursos()
+    }, [])
+)
+
+  /*const items = [
     { id: 1, name: 'Curso de React Native', description: 'Aprenda a criar apps para iOS e Android.' },
     { id: 2, name: 'Curso de Java e Spring Boot', description: 'Construa APIs robustas com Java e Spring.' },
     { id: 3, name: 'Curso de AWS', description: 'Domine os serviços da AWS e obtenha certificação.' },
     { id: 4, name: 'Curso de Python para Data Science', description: 'Analise dados com Python e Pandas.' },
-  ]
+  ]*/
 
   return (
     <View style={styles.container}>
