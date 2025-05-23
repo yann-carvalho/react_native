@@ -1,4 +1,4 @@
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, Alert, Button } from 'react-native'
 import React, { useCallback, useState } from 'react'
 import { useFocusEffect } from '@react-navigation/native'
 import { getCursos } from '../services/CursoService'
@@ -16,14 +16,28 @@ const HomeScreen = ({ navigation }) => {
     useCallback(() => {
       carregarCursos()
     }, [])
-)
+  )
 
-  /*const items = [
-    { id: 1, name: 'Curso de React Native', description: 'Aprenda a criar apps para iOS e Android.' },
-    { id: 2, name: 'Curso de Java e Spring Boot', description: 'Construa APIs robustas com Java e Spring.' },
-    { id: 3, name: 'Curso de AWS', description: 'Domine os serviços da AWS e obtenha certificação.' },
-    { id: 4, name: 'Curso de Python para Data Science', description: 'Analise dados com Python e Pandas.' },
-  ]*/
+  const confirmarExclusao = (id) => {
+    Alert.alert(
+      'Confirmar',
+      'Você tem certeza que deseja excluir este curso?',
+      [
+        {
+          text: 'Cancelar',
+          style: 'cancel'
+        },
+        {
+          text: 'Excluir',
+          style: 'destructive',
+          onPress: async () => {
+            await deletarCurso(id)
+            carregarCursos()
+          }
+        }
+      ]
+    )
+  }
 
   return (
     <View style={styles.container}>
@@ -42,6 +56,7 @@ const HomeScreen = ({ navigation }) => {
           >
             <Text style={styles.itemTitle}>{item.name}</Text>
             <Text style={styles.itemDescription}>{item.description}</Text>
+            <Button title="🗑️" onPress={() => confirmarExclusao(item.id)} color='#d9534f' />
           </TouchableOpacity>
         )}
       />
