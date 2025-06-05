@@ -12,7 +12,7 @@ const RegisterScreen = ({ navigation, registrar }) => {
   const handleRegister = async () => {
     try {
       console.log('Iniciando registro...')
-      await auth.createUserWithEmailAndPassword(auth, email, senha)
+      await createUserWithEmailAndPassword(auth, email, senha)
       Alert.alert('Sucesso', 'Usuário registrado com sucesso!')
       navigation.replace('Main')
     } catch (error) {
