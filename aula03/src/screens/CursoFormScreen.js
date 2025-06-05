@@ -37,8 +37,7 @@ const CursoFormScreen = ({ route, navigation }) => {
       if (editando) {
         await atualizarCurso(itemId, { name: nome, description: descricao })
         Alert.alert('Sucesso', 'Curso atualizado com sucesso!')
-      }
-      else {
+      } else {
         await adicionarCurso({ name: nome, description: descricao })
         Alert.alert('Sucesso', 'Curso criado com sucesso!')
       }
@@ -53,18 +52,21 @@ const CursoFormScreen = ({ route, navigation }) => {
       <Text styles={styles.title}>
         {editando ? 'Editar Curso' : 'Adicionar Curso'}
       </Text>
+
       <TextInput
         placeholder="Nome do Curso"
         style={styles.input}
         value={nome}
         onChangeText={setNome}
       />
+
       <TextInput
         placeholder="Descrição do Curso"
         style={styles.input}
         value={descricao}
         onChangeText={setDescricao}
       />
+
       <Button
         title={editando ? 'Salvar Alterações' : 'Criar Curso'}
         onPress={handleSalvar}

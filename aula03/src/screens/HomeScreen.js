@@ -42,6 +42,10 @@ const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>📚 Cursos Disponíveis</Text>
+      <Button
+        title="Adicionar Curso"
+        onPress={() => navigation.navigate('CursoForm')}
+      />
       <FlatList
         data={items}
         keyExtractor={item => item.id}
