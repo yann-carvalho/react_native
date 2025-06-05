@@ -1,22 +1,37 @@
-import { View, Text, StyleSheet, TextInput, Button, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, TextInput, Button, TouchableOpacity, Alert } from 'react-native'
+import React, { useContext } from 'react'
 import { useState } from 'react'
 import { AntDesign, Ionicons } from '@expo/vector-icons'
+import { signInWithEmailAndPassword } from 'firebase/auth'
+import { auth } from '../config/firebaseConfig'
+import { AuthContext } from '../context/AuthContext'
 
 const LoginScreen = ({ navigation }) => {
 
-  const [username, setUsername] = useState("")
+  const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
+  const { user } = useContext(AuthContext);
+
+  const handleLogin = async () => {
+    try {
+      console.log('Autenticando...')
+      await signInWithEmailAndPassword(auth, email, password)
+      console.log('Usuário autenticado')
+      navigation.replace('Main')
+    } catch (error) {
+      Alert.alert('Erro', 'Emailou senha inválidos!')
+    }
+  }
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>🔐 Login</Text>
 
       <TextInput
-        placeholder="Digite seu nome"
+        placeholder="Digite seu email"
         style={styles.input}
-        value={username}
-        onChangeText={setUsername}
+        value={email}
+        onChangeText={setEmail}
       />
 
       <TextInput
@@ -27,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
         onChangeText={setPassword}
       />
 
-      <Button title="Entrar" onPress={() => navigation.replace('Main')} />
+      <Button title="Entrar" onPress={handleLogin} />
 
       <Text style={styles.orText}>Ainda não tem conta?</Text>
       <Button title="Cadastre-se" onPress={() => navigation.navigate('Register')} />

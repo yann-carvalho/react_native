@@ -1,8 +1,9 @@
 import { View, Text, Alert, TextInput, Button, StyleSheet } from 'react-native'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { getDoc, doc } from 'firebase/firestore'
 import { adicionarCurso, atualizarCurso } from '../services/CursoService'
 import { db } from '../config/firebaseConfig'
+import { AuthContext } from '../context/AuthContext'
 
 
 const CursoFormScreen = ({ route, navigation }) => {
@@ -11,6 +12,8 @@ const CursoFormScreen = ({ route, navigation }) => {
   const [nome, setNome] = useState('')
   const [descricao, setDescricao] = useState('')
   const [editando, setEditando] = useState(false)
+
+  const { user } = useContext(AuthContext)
 
   useEffect(() => {
     if (itemId) {
@@ -35,7 +38,7 @@ const CursoFormScreen = ({ route, navigation }) => {
 
     try {
       if (editando) {
-        await atualizarCurso(itemId, { name: nome, description: descricao })
+        await atualizarCurso(itemId, { name: nome, description: descricao }, user.uid)
         Alert.alert('Sucesso', 'Curso atualizado com sucesso!')
       } else {
         await adicionarCurso({ name: nome, description: descricao })
