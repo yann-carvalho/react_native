@@ -11,6 +11,6 @@ const App = () => {
         </AuthProvider>
       </NavigationContainer>
   )
-} 
+}
 
 export default App

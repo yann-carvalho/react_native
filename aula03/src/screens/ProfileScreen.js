@@ -17,7 +17,6 @@ const ProfileScreen = ({ navigation }) => {
       <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>👤 Meu Perfil</Text>
       <Text>Email: {user?.email}</Text>
       <Button title="Sair" onPress={handleLogout} />
-
     </View>
   )
 }
